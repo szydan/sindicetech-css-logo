@@ -3,17 +3,54 @@
 
 @color-background: #fff;
 
+@-webkit-keyframes spin{
+	from { -webkit-transform: rotate(0deg); }
+	to {   -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+@-o-keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+	.logoBox{
+			float:left;
+			width:400px;
+			height:400px;
+			margin:40px;
+	}
+
+	
 	.sindicetech-css-logo{
 			width:400px;
 			height:400px;
 			position: relative;
 			top: 0;
 			left:0;
-			background-color: #fff;
 		}
 
+	.sindicetech-css-logo.spinning{	
+		-webkit-animation: spin 8s infinite; /* Safari 4+ */
+  		-moz-animation:    spin 8s infinite; /* Fx 5+ */
+  		-o-animation:      spin 8s infinite; /* Opera 12+ */
+  		animation:         spin 8s infinite; 
+		-webkit-animation-timing-function:linear;
+		animation-timing-function: linear;
+	}
+	
 
-.sindicetech-css-logo:before { /* shadow */
+
+.shadow:before { /* shadow */
     box-shadow: 0 360px 10px rgba(0,0,0,0.2);
     border-radius:50%;
     content: "";
@@ -25,7 +62,7 @@
     width: 380px;
 }
 
-	.sindicetech-css-logo:after { /* shine */
+.glossy:after { /* shine */
     background: -ms-linear-gradient(top left, rgba(255,255,255,0) 56%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0) 100%);
     background: -moz-linear-gradient(top left, rgba(255,255,255,0) 56%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0) 100%);
     background: -o-linear-gradient(top left, rgba(255,255,255,0) 56%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0) 100%);
@@ -56,12 +93,13 @@
 		.sindicetech-css-logo .grey:after{
 			content: "";
 			background-color: inherit;
-			width: 75px;
+			width: 73px;
 			height:33px;
 			display: block;
 			position: relative;
 			top: 19px;
 			left: 60px;
+			z-index:9;
 		}
 
 
@@ -120,6 +158,7 @@
 			position: relative;
 			top: 19px;
 			left: -65px;
+			z-index:9;
 		}
 
 		
